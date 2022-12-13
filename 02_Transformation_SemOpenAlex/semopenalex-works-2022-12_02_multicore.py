@@ -1,5 +1,3 @@
-# Copyright Johan Krause, Michael Färber, Institute AIFB, Karlsruhe Institute of Technology (KIT)
-# this script transforms OpenAlex data dump files to triple form in n-triple files for SemOpenAlex
 from rdflib import Graph
 from rdflib import URIRef, BNode, Literal
 from rdflib.namespace import DCTERMS, RDF, RDFS, XSD, OWL
@@ -376,16 +374,13 @@ def transform_gz_file(gz_file_path):
                                 concept_uri = URIRef(soa_namespace_concept + str(concept_id))
                                 concept_score = concept["score"]
                                 concept_score_uri = URIRef(soa_namespace_concept_score + str(work_id) + str(concept_id))
-                                # direkte Verbindung ohne score value
+
                                 works_graph.add((work_uri, has_concept_predicate, concept_uri))
                                 works_graph.add((concept_score_uri, RDF.type, soa_class_concept_score))
                                 works_graph.add((work_uri, has_concept_score_predicate, concept_score_uri))
                                 works_graph.add((concept_score_uri, has_concept_predicate, concept_uri))
                                 works_graph.add(
                                     (concept_score_uri, score_predicate, Literal(concept_score, datatype=XSD.integer)))
-
-                        # mesh
-                        # to do
 
                         # alternate_host_venues
                         work_alternate_host_venues = json_data['alternate_host_venues']
@@ -438,9 +433,6 @@ def transform_gz_file(gz_file_path):
                                 rel_work = rel_work.replace("https://openalex.org/", "")
                                 related_work_uri = URIRef(soa_namespace_works + str(rel_work))
                                 works_graph.add((work_uri, related_work_predicate, related_work_uri))
-
-                        # cited_by_api_url
-                        # is missing atm
 
                         # counts_by_year
                         work_counts_by_year = json_data['counts_by_year']

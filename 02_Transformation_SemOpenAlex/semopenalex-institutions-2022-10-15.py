@@ -196,7 +196,6 @@ with open(nt_output_file_path, "w", encoding="utf-8") as g:
                             institution_dnalternative = clean(institution_dnalternative)
                             institutions_graph.add((institution_uri,alt_name_predicate,Literal(institution_dnalternative,datatype=XSD.string)))
 
-
                     #works_count
                     institution_works_count = json_data['works_count']
                     if not institution_works_count is None:
@@ -262,9 +261,6 @@ with open(nt_output_file_path, "w", encoding="utf-8") as g:
                             institutions_graph.add((geo_uri,long_geo_predicate,Literal(geo_longitude,datatype=XSD.float)))
 
 
-                    #international
-                    #to do
-
                     #associated_institutions
                     institution_associated_institutions = json_data.get('associated_institutions')
                     if not institution_associated_institutions is None:
@@ -287,9 +283,6 @@ with open(nt_output_file_path, "w", encoding="utf-8") as g:
                             institutions_graph.add((count_year_uri,year_predicate,Literal(count_year_year,datatype=XSD.integer)))
                             institutions_graph.add((count_year_uri,works_count_predicate,Literal(count_year_works_count,datatype=XSD.integer)))
                             institutions_graph.add((count_year_uri,cited_by_count_predicate,Literal(count_year_cited_by_count,datatype=XSD.integer)))
-
-                    #works_api_url
-                    #to do
 
                     #updated_date
                     institution_updated_date = json_data['updated_date']

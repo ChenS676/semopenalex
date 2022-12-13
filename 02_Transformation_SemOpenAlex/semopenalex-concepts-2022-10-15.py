@@ -146,7 +146,7 @@ with open(nt_output_file_path, "w", encoding="utf-8") as g:
                         concept_wikidata = clean_url(concept_wikidata)
                         concept_wikidata_canonical = concept_wikidata.replace("/wiki/","/entity/").replace("https","http")
                         concept_wikidata_uri = URIRef(concept_wikidata_canonical)
-                        #aus 'https://www.wikidata.org/wiki/Q1231558' wird 'http://www.wikidata.org/entity/Q1231558'
+                        # from 'https://www.wikidata.org/wiki/Q1231558' to 'http://www.wikidata.org/entity/Q1231558'
 
                         concept_graph.add((concept_uri,OWL.sameAs,concept_wikidata_uri))
 

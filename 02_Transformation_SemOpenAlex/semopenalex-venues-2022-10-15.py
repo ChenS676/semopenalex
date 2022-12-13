@@ -144,7 +144,6 @@ with open(nt_output_file_path, "w", encoding="utf-8") as g:
                         for venue_issn in venue_issn_list:
                             venue_graph.add((venue_uri,has_issn_predicate,Literal(venue_issn,datatype=XSD.string)))
 
-
                     #display_name
                     venue_display_name = json_data['display_name']
                     if not venue_display_name is None:
@@ -190,10 +189,7 @@ with open(nt_output_file_path, "w", encoding="utf-8") as g:
                         makg_uri = URIRef("https://makg.org/entity/" + str(venue_mag_id))
                         venue_graph.add((venue_uri,OWL.sameAs,makg_uri))
 
-
-
-
-                    #counts_by_year (neue Klasse; verbindung; plus werte in neue Klasse)
+                    #counts_by_year 
                     venue_counts_by_year = json_data['counts_by_year']
                     if not venue_counts_by_year is None:
                         for count_year in venue_counts_by_year:
@@ -207,9 +203,6 @@ with open(nt_output_file_path, "w", encoding="utf-8") as g:
                             venue_graph.add((count_year_uri,works_count_predicate,Literal(count_year_works_count,datatype=XSD.integer)))
                             count_year_cited_by_count = count_year["cited_by_count"]
                             venue_graph.add((count_year_uri,cited_by_count_predicate,Literal(count_year_cited_by_count,datatype=XSD.integer)))
-
-                    #works_api_url
-                    #to do
 
                     #updated_date
                     venue_updated_date = json_data['updated_date']
