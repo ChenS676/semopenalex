@@ -46,7 +46,7 @@ storage:
       dtype: float
   model_dir: /mount_ws/mmm_ws/mmod/05_gat/w01/
 training:
-  batch_size: 35000
+  batch_size: 16000
   negative_sampling:
     num_chunks: 10
     negatives_per_positive: 500
