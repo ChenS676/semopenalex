@@ -1,6 +1,6 @@
-# Graph Entity Embeddings for SemOpenAlex
+## Graph Entity Embeddings for SemOpenAlex
 
-## Pre-processing, training and evaluation
+### Pre-processing, training and evaluation
 
 *01:* Extracts triples from full RDF dump of SemOpenAlex. Mostly, relevant entity <> entity relations are extracted. Also auxiliary classes are cut short, i.e. intermediate hops are eliminated such as HostVenue between Work and Venue. 
 
