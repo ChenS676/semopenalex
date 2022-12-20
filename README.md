@@ -19,3 +19,7 @@ This repository covers:
 - multiprocessing
 - kgtk
 - marius
+
+## Schema 
+
+The full current schema of the knowledge graph SemOpenAlex is included in the file `SemOpenAlex_full_schema_2022_12_02.pdf`.
