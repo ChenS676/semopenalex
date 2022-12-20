@@ -18,3 +18,8 @@
 
 Visualization scripts to plot scores and determine relation-wise performance in folder *evluation*.
 Further, the sheet that aggregates the evaluation scores for the training runs for all five approaches. 
+
+### Technical details
+
+All processes regarding Marius were executed in a container environment for HPC settings, using the Enroot framework for Docker containers. 
+The container image is `nvidia+cuda+11.2.2-cudnn8-devel-ubuntu18.04.sqsh` from [NVidia](https://catalog.ngc.nvidia.com/containers)
