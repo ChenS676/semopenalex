@@ -10,7 +10,8 @@ This repository covers:
 
 ## Embeddings
 
-Pre-processing, training and evaluation:
+###Pre-processing, training and evaluation:
+
 *01:* Extracts triples from full RDF dump of SemOpenAlex. Mostly, relevant entity <> entity relations are extracted. Also auxiliary classes are cut short, i.e. intermediate hops are eliminated such as HostVenue between Work and Venue. 
 
 *02:* Converts the extracted triples using the [KGTK package](https://github.com/usc-isi-i2/kgtk), for string abbreviation (replacement of common namespace prefixes and data type labels)
